@@ -39,7 +39,7 @@ function filterData(arr, prop, value) {
       result.push(arr[i]);
     }
   }
-  return result.length > 1 ? result : "No match found";
+  return result.length >= 1 ? result : "No match found";
 }
 
 const arr = [
@@ -64,4 +64,6 @@ const arr = [
     department: "IT",
   },
 ];
+console.log(filterData(arr, "department", "HR"));
 console.log(filterData(arr, "department", "IT"));
+console.log(filterData(arr, "department", "Finance"));

@@ -22,8 +22,21 @@
 //   return max;
 // };
 const maxString = (arr) => {
-  return arr.reduce((max, e) => (e.length > max.length ? e : max), "");
+  let maxLength = 0;
+  let maxWords = [];
+
+  for (const word of arr) {
+    if (word.length > maxLength) {
+      maxLength = word.length;
+      maxWords = [word];
+    } else if (word.length === maxLength) {
+      maxWords.push(word);
+    }
+  }
+  return maxWords.join(" ");
 };
-const arr = ["JavaScript", "Python", "Java", "C++", "Ruby", "Swift"];
+
+const arr = ["JavaScript", "Pythonllll", "Java", "C++", "Ruby", "Swift"];
 console.log(maxString(arr));
+
 // console.log(maxStr(arr));

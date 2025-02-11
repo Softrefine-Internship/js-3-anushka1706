@@ -29,11 +29,12 @@ function changePropertyValue(arr, propertyName, propertyVal) {
   for (let i = 0; i < arr.length; i++) {
     for (const key in arr[i]) {
       if (key === id && arr[i][key] === val && typeof name_val === "string") {
+        console.log(name_val);
         arr[i][name] = name_val;
       }
     }
-    return arr;
   }
+  return arr;
 }
 const arr = [
   {
@@ -51,5 +52,5 @@ const arr = [
 ];
 
 console.log(
-  changePropertyValue(arr, { employee_id: 1 }, { employee_name: "anushka" })
+  changePropertyValue(arr, { employee_id: 3 }, { employee_name: "anushka" })
 );
