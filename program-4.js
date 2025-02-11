@@ -14,15 +14,12 @@
 // Output: 1 (index of an object for prop_1: 'val_4')
 
 function findProp(arr, key, value) {
-  let index;
-  for (let i = 0; i < arrayObj.length; i++) {
-    for (const prop in arrayObj[i]) {
-      if (prop === key && arrayObj[i][prop] === value) {
-        index = i;
-      }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i][key] === value) {
+      return i;
     }
   }
-  return index || "index not found";
+  return "index not found";
 }
 
 const arrayObj = [
@@ -38,4 +35,6 @@ const arrayObj = [
   },
 ];
 
+console.log(findProp(arrayObj, "prop_1", "val_1"));
 console.log(findProp(arrayObj, "prop_1", "val_4"));
+console.log(findProp(arrayObj, "prop_2", "val_10"));
